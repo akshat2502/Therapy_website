@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import therapy from '../../assets/therapy.png';
 
 const Footer = () => {
   return (
@@ -11,14 +12,15 @@ const Footer = () => {
         }} />
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 py-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-6">
-              <div className="h-12 w-12 bg-primary-600 rounded-xl flex items-center justify-center mr-4">
+              {/* <div className="h-12 w-12 bg-primary-600 rounded-xl flex items-center justify-center mr-4">
                 <span className="text-xl font-bold text-white">T</span>
               </div>
-              <h3 className="text-3xl font-bold text-primary-400">therapyforall</h3>
+              <h3 className="text-3xl font-bold text-primary-400">therapyforall</h3> */}
+              <img src={therapy} width='40%' className='bg-white'/>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               Your trusted platform for mental health support, therapy sessions, and wellness courses.
@@ -43,7 +45,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-3">
-              <li><Link to="/therapists" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"><span className="group-hover:translate-x-1 transition-transform duration-200">Find Therapists</span></Link></li>
+              <li><Link to="/booking" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"><span className="group-hover:translate-x-1 transition-transform duration-200">Find Therapists</span></Link></li>
               <li><Link to="/courses" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"><span className="group-hover:translate-x-1 transition-transform duration-200">Courses</span></Link></li>
               <li><Link to="/blog" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"><span className="group-hover:translate-x-1 transition-transform duration-200">Blog</span></Link></li>
               <li><Link to="/contact" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"><span className="group-hover:translate-x-1 transition-transform duration-200">Contact Us</span></Link></li>
@@ -60,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-gray-800 mt-10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">&copy; 2025 therapyforall. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">

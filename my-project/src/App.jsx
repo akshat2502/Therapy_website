@@ -9,17 +9,23 @@ import home from "./assets/home4.jpg";
 import Home from './pages/Home';
 import Login from './components/Auth/Login';
 import Signup from './components/Auth/Signup';
+import Admin from './pages/admin/AdminDashboard';
+import Contact from './pages/Contact';
+import FaqSection from './pages/Faq';
+import Booking from './pages/Booking';
+import Resources from './pages/Blogs';
 
 function App() {
+  
   return (
     <AuthProvider>
       <Router>
-        <div className="flex flex-col min-h-screen" style={{
+        {/* <div className="flex flex-col min-h-screen" style={{
           backgroundImage: `url(${home})`,
           backgroundSize: 'auto 73%',
           backgroundPosition: 'top',
           backgroundRepeat: 'no-repeat',
-        }}>
+        }}> */}
           <Navbar />
           <main className="flex-grow">
             <Routes>
@@ -44,7 +50,7 @@ function App() {
                 element={
                   <ProtectedRoute adminOnly>
                     <div className="min-h-screen flex items-center justify-center">
-                      <h1 className="text-2xl font-bold">Admin Dashboard - Coming Soon</h1>
+                    <Admin />
                     </div>
                   </ProtectedRoute>
                 } 
@@ -52,44 +58,32 @@ function App() {
 
               {/* Public Routes */}
               <Route 
-                path="/therapists" 
-                element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <h1 className="text-2xl font-bold">Therapists - Coming Soon</h1>
-                  </div>
-                } 
+                path="/booking" 
+                element={<Booking />} 
               />
               
               <Route 
                 path="/courses" 
-                element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <h1 className="text-2xl font-bold">Courses - Coming Soon</h1>
-                  </div>
-                } 
+                // element={} 
               />
               
               <Route 
                 path="/blog" 
-                element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <h1 className="text-2xl font-bold">Blog - Coming Soon</h1>
-                  </div>
-                } 
+                element={<Resources />} 
               />
               
               <Route 
                 path="/contact" 
-                element={
-                  <div className="min-h-screen flex items-center justify-center">
-                    <h1 className="text-2xl font-bold">Contact - Coming Soon</h1>
-                  </div>
-                } 
+                element={<Contact />} 
+              />
+              <Route 
+                path="/faq" 
+                element={<FaqSection />} 
               />
             </Routes>
           </main>
           <Footer />
-        </div>
+        {/* </div> */}
       </Router>
     </AuthProvider>
   );

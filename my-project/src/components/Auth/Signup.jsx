@@ -63,11 +63,11 @@ const Signup = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         {/* Logo/Brand */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <div className="mx-auto h-16 w-16 bg-primary-600 rounded-2xl flex items-center justify-center mb-4">
             <span className="text-2xl font-bold text-white">T</span>
           </div>
-        </div>
+        </div> */}
         
         <div>
           <h2 className="text-center text-3xl font-bold text-gray-900">
@@ -81,8 +81,8 @@ const Signup = () => {
           </p>
         </div>
         
-        <div className="bg-white py-8 px-6 shadow-xl rounded-2xl border border-gray-100">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="bg-transparent backdrop-blur-md py-8 px-6 shadow-xl rounded-2xl">
+          <form className="space-y-4" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-xl">
               {error}
@@ -202,7 +202,7 @@ const Signup = () => {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:scale-[1.02]"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-blue-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all transform hover:scale-[1.02]"
             >
               {loading ? 'Creating account...' : 'Create account'}
             </button>

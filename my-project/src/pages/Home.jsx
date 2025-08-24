@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Calendar, BookOpen, MessageSquare, Users, Shield, Clock, ArrowRight, Star, CheckCircle, X } from 'lucide-react';
 import home from "../assets/home4.jpg";
 import Navbar from '../components/Layout/Navbar';
+import ReviewCarousel from './Testimonial';
+import FaqSection from './Faq';
 
 const Home = () => {
   const features = [
@@ -37,27 +39,6 @@ const Home = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "Client",
-      content: "therapyforall helped me find the perfect therapist. The platform is so easy to use and the support is amazing.",
-      rating: 5
-    },
-    {
-      name: "Dr. Michael Chen",
-      role: "Therapist",
-      content: "As a therapist, I love how therapyforall makes it easy to connect with clients and manage my practice.",
-      rating: 5
-    },
-    {
-      name: "Emma Davis",
-      role: "Course Student",
-      content: "The mental health courses are incredibly comprehensive and have helped me understand myself better.",
-      rating: 5
-    }
-  ];
-
   const stats = [
     { number: "5K+", label: "Happy Clients" },
     { number: "50+", label: "Licensed Therapists" },
@@ -82,11 +63,11 @@ const Home = () => {
           left: 0,
         }} />
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-30">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
               <CheckCircle className="w-4 h-4 mr-2 text-green-300" />
-              <span className="text-sm font-medium">Trusted by 10,000+ clients worldwide</span>
+              <span className="text-sm font-medium">Trusted by 5,000+ clients worldwide</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
@@ -98,10 +79,10 @@ const Home = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Link
-                to="/therapists"
+                to="/booking"
                 className="group bg-blue-600 text-primary-600 px-8 py-4 rounded-xl font-semibold hover:backdrop-blur-sm hover:bg-white/50 hover:text-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
               >
-                Find a Therapist
+                Book a session
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
@@ -248,7 +229,6 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-
       <section className="py-16 bg-blue-700">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-36">
     <h2 className="text-3xl font-semibold text-center text-white mb-12">
@@ -351,9 +331,8 @@ const Home = () => {
   </div>
       </section>
 
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-blue-700 text-white">
+      {/* Testimonials Section */}      
+      {/* <section className="py-24 bg-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">What Our Community Says</h2>
@@ -379,57 +358,8 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-700 text-white relative overflow-hidden">
-  {/* Decorative Pattern Overlay */}
-  <div className="absolute inset-0 bg-black/10">
-    <div
-      className="absolute inset-0 opacity-20"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
-        backgroundSize: "40px 40px",
-      }}
-    />
-  </div>
-
-  {/* Main Content */}
-  <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
-    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-md">
-      Ready to Start Your Journey?
-    </h2>
-    <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-      Join thousands who’ve found healing, growth, and mental clarity through our comprehensive wellness platform.
-    </p>
-
-    {/* Buttons */}
-    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-      <Link
-        to="/signup"
-        className="group relative overflow-hidden bg-white text-blue-700 px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center"
-      >
-        <span className="relative z-10 flex items-center">
-          Get Started Today
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-        </span>
-        <span className="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition-opacity duration-300"></span>
-      </Link>
-
-      <Link
-        to="/contact"
-        className="group relative overflow-hidden border-2 border-white/25 bg-white/10 backdrop-blur-lg text-white px-10 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-2xl"
-      >
-        <span className="relative z-10 flex items-center">
-          Contact Us
-          <MessageSquare className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" />
-        </span>
-        <span className="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition-opacity duration-300"></span>
-      </Link>
-    </div>
-  </div>
-</section>
-
+      </section> */}
+      <ReviewCarousel />
     </div>
   );
 };

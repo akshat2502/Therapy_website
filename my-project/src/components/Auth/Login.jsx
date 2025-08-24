@@ -62,8 +62,8 @@ const Login = () => {
         </div>
         
         {/* <div className="bg-white py-8 px-6 shadow-xl rounded-2xl border border-gray-100"> */}
-        <div className="bg-transparent backdrop-blur-lg py-8 px-6 shadow-xl rounded-2xl">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+        <div className="bg-transparent backdrop-blur-md py-8 px-6 shadow-xl rounded-2xl">
+          <form className="space-y-5" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-xl">
               {error}

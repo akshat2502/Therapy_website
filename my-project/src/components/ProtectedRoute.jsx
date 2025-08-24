@@ -12,6 +12,10 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
     return <Navigate to="/dashboard" />;
   }
 
+  // if (role && userRole !== role) {
+  //   return <Navigate to="/" replace />; // redirect if wrong role
+  // }
+
   return children;
 };
 

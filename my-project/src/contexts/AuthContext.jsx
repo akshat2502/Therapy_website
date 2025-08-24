@@ -57,9 +57,14 @@ export const AuthProvider = ({ children }) => {
       const userDoc = await getDoc(doc(db, 'users', uid));
       if (userDoc.exists()) {
         return userDoc.data().role;
+        
       }
     } catch (error) {
+      if (error.code === 'unavailable') {
+      console.warn('Firestore unavailable, client may be offline.');
+    } else {
       console.error('Error getting user role:', error);
+    }
     }
     return 'user';
   };
